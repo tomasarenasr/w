@@ -1,0 +1,30 @@
+/*
+.container{
+    margin-top: 5ex;
+    padding-top: 20px;
+    border: 3px solid #f1f1f1;
+    padding-bottom: 20px;
+    width   : 20px;
+    position: relative;
+    z-index : 1;
+    background-color: white;
+}
+
+input[type=email], input[type=password], input[type=name]  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  html,body{
+    background-image: url('https://www.desktopbackground.org/p/2012/07/02/414607_wallpapers-library-wallpapers-cave_1920x1080_h.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+*/
