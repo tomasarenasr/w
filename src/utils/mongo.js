@@ -25,10 +25,10 @@ class Mongo {
         return result
     }
 
-    addReadingNowBook = async ({bookId, firebaseId}) => {
+    addReadingNowBook = async ({bookId, firebaseId, currentPage, totalPages, dateStarted}) => {
         const result = await axios.post(`${DATABASE_PATH}readingNow/`, null, {params: {
             firebaseId,
-            bookId
+            bookId, currentPage, totalPages, dateStarted
         }})
 
         return result
@@ -41,6 +41,40 @@ class Mongo {
         }})
 
         return result
+    }
+
+    addBookRead = async({bookId, firebaseId, dateEnded}) => {
+        const result = await axios.post(`${DATABASE_PATH}booksRead/`, null, {
+            params: {
+                bookId, 
+                firebaseId, 
+                dateEnded
+            }}
+        )
+        console.log({result})
+        return result;
+    }
+
+    updateBookCurrentPage = async ({bookId, firebaseId, currentPage}) => {
+        const result = await axios.post(`${DATABASE_PATH}user/book/updateCurrentPage/`, null, {
+            params: {
+                bookId, 
+                firebaseId, 
+                currentPage
+            }}
+        )
+        return result;
+    }
+
+    setPagesRead = async ({firebaseId,date,pages}) => {
+        const result = await axios.post(`${DATABASE_PATH}user/stats/pagesRead/`, null, {
+            params: {
+                date, 
+                firebaseId, 
+                pages
+            }}
+        )
+        return result;
     }
 
 }
